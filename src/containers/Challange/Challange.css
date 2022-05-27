@@ -1,0 +1,31 @@
+.challange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  height: 100vh;
+  padding: 1em;
+}
+
+.challange.wrong {
+  background: linear-gradient(180deg, #F6B868 0%, #EE6B2D 100%);
+}
+
+.challange.good {
+  background: linear-gradient(180deg, #F1B496 0%, #EA806A 100%);
+}
+
+.challange.excellent {
+  background: linear-gradient(180deg, #76E0C2 0%, #59CADA 100%);
+}
+
+.challange h1 {
+  text-align: center;
+  margin: 2em 1em;
+}
+
+.challange h3 {
+  text-align: center;
+  margin: 2em 1em;
+}

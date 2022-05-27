@@ -1,0 +1,77 @@
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90rem;
+  width: 100%;
+  min-height: calc(4.1rem + 2vw);
+  height: auto;
+  margin: 1em;
+  border: 2px solid #FFF;
+  border-radius: 100px;
+}
+
+.toggle input {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+}
+
+.toggle label {
+  position: relative;
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 20;
+
+  font-size: clamp(1.4rem, 2.5vw, 2rem); 
+
+  color: #FFF;
+  text-align: center;
+}
+
+.toggle label:focus-visible {
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 100px;
+  outline: 0;
+}
+
+.toggle label:hover {
+  cursor: pointer;
+}
+
+.indicator {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 100px;
+
+  transition: 0.25s ease-out;
+}
+
+.toggle input[type="radio"]:checked + label {
+  color: rgba(0,0,0,.4);
+}
+
+.toggle input[class="option-a"]:checked~.indicator {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.toggle input[class="option-b"]:checked~.indicator {
+  visibility: visible;
+  transform: translateX(100%);
+}
+
+.toggle input:disabled + label {
+  pointer-events: none;
+}

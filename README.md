@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# React Toggle component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+See it live: [React Toggle component](https://czeglik.com/react-toggle-component/)
 
-## Available Scripts
+This project has been created using:
 
-In the project directory, you can run:
+- React
+- Redux (manage app state in predictable manner)
+- Typescript (for type checking)
+- Create react app (for quick setup and go)
 
-### `npm start`
+## Assumptions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Use as little external libs / packages as possible
+- Use browser form elements (input, label) instead of creating custom javascript based solution
+- Solution is dedicated for modern browsers and verified in the latest versions of MS Edge, Chrome, Safari and Firefox
+- Accessibility: User is able to navigate page using keyboard (Tab or Shift Tab) and select answers by pressing Space or Enter
+- Correctness of answers is determined by proportion of correct answers to the total number of them
+- Skip i18n on purpose. No such requirement and not too much time to spend on implementing it
+- Skip unit, integration and end 2 end tests on purpose. No such requirement and not too much time to spend on implementing it
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Data representation
 
-### `npm test`
+```
+{
+  question: "string",
+  answers: [
+    {
+      correct: "boolean",
+      id: "string",
+      options: [
+        {
+          checked: "boolean",
+          id: "string",
+          text: "string",
+        }
+      ]
+    }
+  ],
+  solutions: [
+    {
+      answerId: "string",
+      optionId: "string",
+    }
+  ]
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+```
+import { Toggle } from "./components/Toggle";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<Toggle
+  disabled={false}
+  name="toggle-name"
+  onChange={event => { console.log(event.target.value) }}
+  options={[
+    { id: "1", text: "One", checked: false, },
+    { id: "2", text: "Two", checked: false, },
+  ]}
+/>
+```
