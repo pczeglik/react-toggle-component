@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Challange } from "../containers/Challange";
+import { Challange } from "../features/challange";
 import { Toggle } from "../components/Toggle";
 import "./App.css";
 

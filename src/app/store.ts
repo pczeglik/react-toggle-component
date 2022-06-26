@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import challangeReducer from "../slices/challange/challangeSlice";
+import challangeReducer from "../features/challange/challangeSlice";
 
 const store = configureStore({
   reducer: {
