@@ -1,4 +1,4 @@
-import { TAnswer } from '../../containers/Challange';
+import { TAnswer } from '.';
 
 type TSolution = {
   answerId: string;
