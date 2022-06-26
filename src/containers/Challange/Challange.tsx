@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { useAppSelector, useAppDispatch } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setAnswer } from "../../slices/challange/challangeSlice";
 import { mapPercentageToClassName } from "../../common/utilities";
 import { Toggle, TToggle } from "../../components/Toggle";

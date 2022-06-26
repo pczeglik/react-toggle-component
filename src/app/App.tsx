@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Challange } from "./containers/Challange";
-import { Toggle } from "./components/Toggle";
+import { Challange } from "../containers/Challange";
+import { Toggle } from "../components/Toggle";
 import "./App.css";
 
 function App() {
